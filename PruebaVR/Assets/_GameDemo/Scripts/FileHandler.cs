@@ -1,4 +1,8 @@
-﻿using System;
+﻿//FileHandler Implementation by Velvary at:
+//https://www.youtube.com/watch?v=KZft1p8t2lQ
+//Repo: https://github.com/MichelleFuchs/StoringDataJsonUnity
+
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;

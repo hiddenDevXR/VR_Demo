@@ -30,38 +30,11 @@ public class ScoreManager : MonoBehaviour
         while (topScores.Count > scoreMaxCount)
             topScores.RemoveAt(scoreMaxCount);
         
-        //SanitizeData();
 
         for (int i = 0; i < topScores.Count; i++)
             sessionScores[i].text = topScores[i].sessionScore.ToString() + "pts";
 
         sessionTime.text = GameManager.sessionTime.ToString() + "s";
-    }
-
-    private void SanitizeData()
-    {
-        float currentScore = 0;
-
-        foreach (ScoreElement a in topScores)
-        {
-            currentScore = a.sessionScore;
-
-            foreach (ScoreElement b in topScores)
-            {
-                if (a != b)
-                {
-                    if (currentScore == b.sessionScore)
-                        b.sessionScore = 0;
-                }
-            }
-        }
-
-        foreach(ScoreElement a in topScores)
-        {
-            publicScores.Add(a.sessionScore);
-        }
-
-        publicScores.Sort();
     }
 
     private static void SaveScore()
